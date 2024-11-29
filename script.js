@@ -32,5 +32,9 @@ function addItem() {
 
 
 
-
+searchTask.addEventListener('keypress', function (e) {
+  if (e.key === "Enter") {
+    addItem();
+  }
+})
 addBtn.addEventListener("click", addItem);
