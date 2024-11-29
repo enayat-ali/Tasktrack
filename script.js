@@ -1,6 +1,6 @@
 const searchTask = document.querySelector(".searchTask");
 const addBtn = document.querySelector(".addBtn");
-
+let editTodo = null;
 
 function addItem() {
     const taskText = searchTask.value.trim();
@@ -32,6 +32,22 @@ function addItem() {
         edit.addEventListener("click", function(){
           searchTask.value = p.innerHTML;
           searchTask.focus();
+          //replace the current add button functionality temp
+          addBtn.removeEventListener("click", addItem);
+          addBtn.addEventListener("click", function saveEdit() {
+            const updatedText = searchTask.value.trim();
+            if (updatedText) {
+              p.innerHTML = updatedText;
+            }
+            searchTask.value = "";
+            searchTask.focus();
+            
+            //restore add function
+            addBtn.removeEventListener("click", saveEdit);
+            addBtn.addEventListener("click", addItem);
+            
+          })
+          
          
         })
     }
