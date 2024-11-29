@@ -27,6 +27,13 @@ function addItem() {
           }
           // listItem.style.textDecoration = "line-through"
         })
+        const edit = listItem.querySelector(".edit");
+        const p = listItem.querySelector("p");
+        edit.addEventListener("click", function(){
+          searchTask.value = p.innerHTML;
+          searchTask.focus();
+         
+        })
     }
 }
 
