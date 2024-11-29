@@ -20,7 +20,7 @@ function addItem() {
         })
         const done = listItem.querySelector(".done");
         done.addEventListener("click", function() {
-          listItem.style.textDecoration = "underline"
+          listItem.style.textDecoration = "line-through"
         })
     }
 }
