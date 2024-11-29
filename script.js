@@ -20,7 +20,12 @@ function addItem() {
         })
         const done = listItem.querySelector(".done");
         done.addEventListener("click", function() {
-          listItem.style.textDecoration = "line-through"
+          if (listItem.style.textDecoration === "line-through") {
+            listItem.style.textDecoration = "none"
+          } else {
+            listItem.style.textDecoration = "line-through"
+          }
+          // listItem.style.textDecoration = "line-through"
         })
     }
 }
